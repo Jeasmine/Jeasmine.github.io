@@ -32,7 +32,7 @@ const projects = [
       "TensorFlow/Keras",
       "Time Series Analysis"
     ],
-    viewLink: "/sales-forecasting",
+    viewLink: "https://github.com/Jeasmine/Jeasmine.github.io/tree/main/sales_forecasting",
     details: {
       objective:
         "Understand demand behavior, identify patterns, and deliver reliable demand forecasts under real-world sales variability.",
@@ -64,7 +64,7 @@ const projects = [
       "~37% benign cases misclassified"
     ],
     technologies: ["Python", "TensorFlow", "Keras", "CNN", "Image Preprocessing"],
-    viewLink: "/skin-cancer",
+    viewLink: "https://github.com/Jeasmine/Jeasmine.github.io/tree/main/skin_cancer",
     details: {
       objective:
         "Build a reliable binary lesion classifier that prioritizes the detection of malignant cases for safer clinical screening support.",
@@ -96,7 +96,7 @@ const projects = [
       "Scalable classification and extraction workflow"
     ],
     technologies: ["Python", "Transformers", "BERT", "HuggingFace", "NLP Pipelines"],
-    viewLink: "/cx_classifier",
+    viewLink: "https://github.com/Jeasmine/Jeasmine.github.io/tree/main/cx_classifier",
     details: {
       objective:
         "Automate conversation understanding and information extraction to reduce manual effort and improve service orchestration.",
@@ -127,7 +127,7 @@ const projects = [
       "Improved interpretability of dominant data structure"
     ],
     technologies: ["Python", "NumPy", "Pandas", "Scikit-learn", "Matplotlib"],
-    viewLink: "/pca",
+    viewLink: "https://github.com/Jeasmine/Jeasmine.github.io/tree/main/PCA",
     details: {
       objective:
         "Reduce dimensionality while preserving meaningful variance so the transformed dataset is faster to model and easier to interpret.",
