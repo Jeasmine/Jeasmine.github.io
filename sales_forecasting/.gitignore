@@ -1,0 +1,24 @@
+# Data sources
+datos/
+
+# CatBoost generated files
+catboost_info/
+
+# Saved models and generated artifacts
+*.keras
+*.h5
+*.hdf5
+*.cbm
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+models/
+checkpoints/
+artifacts/
+outputs/
+runs/
+logs/
+tensorboard/
+mlruns/
+wandb/

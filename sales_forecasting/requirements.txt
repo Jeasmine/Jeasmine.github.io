@@ -1,0 +1,16 @@
+catboost
+holidays
+keras
+matplotlib
+mlxtend
+nbformat
+numpy
+pandas
+plotly
+scikit-learn
+scipy
+seaborn
+statsmodels
+tensorflow; python_version < "3.14"
+tf-nightly; python_version >= "3.14"
+xgboost
