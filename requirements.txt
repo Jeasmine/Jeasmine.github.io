@@ -1,0 +1,9 @@
+setuptools
+jinja2
+numpy
+pandas
+matplotlib
+seaborn
+scikit-learn
+scipy
+yellowbrick
