@@ -205,3 +205,65 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# ------------------------------
+# Project-wide ML/Data artifacts
+# ------------------------------
+
+# Data sources and exports
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.feather
+*.jsonl
+*.ndjson
+*.sqlite
+*.db
+data/
+datos/
+datasets/
+raw/
+processed/
+interim/
+external/
+
+# Saved models and checkpoints
+*.keras
+*.h5
+*.hdf5
+*.ckpt
+*.pt
+*.pth
+*.pb
+*.onnx
+*.joblib
+*.pkl
+*.pickle
+*.model
+*.cbm
+*.weights.h5
+*.safetensors
+models/
+checkpoints/
+artifacts/
+outputs/
+
+# Experiment logs and trackers
+catboost_info/
+mlruns/
+wandb/
+tensorboard/
+runs/
+logs/
+.hf_keras_presets/
+
+# Compressed data/model bundles
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+*.bz2
+*.xz
