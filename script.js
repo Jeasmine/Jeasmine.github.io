@@ -5,34 +5,43 @@
 // ==============================
 const projects = [
   {
-    id: "pca-analysis",
-    title: "Principal Component Analysis (PCA) for Dimensionality Reduction",
-    primaryCategory: "dimensionality-reduction",
-    categoryLabel: "Dimensionality Reduction",
-    categories: ["dimensionality-reduction", "machine-learning", "data-analysis"],
-    summary: "Dimensionality-reduction workflow designed to simplify correlated feature spaces before downstream modeling.",
+    id: "sales-forecasting-system",
+    title: "Sales Forecasting with Machine Learning and Deep Learning",
+    primaryCategory: "machine-learning",
+    categoryLabel: "Machine Learning",
+    categories: ["machine-learning", "data-analysis", "deep-learning"],
+    summary:
+      "Retail demand forecasting system using real brewery sales data (Argentina, 2022-2025) with ML and DL model comparisons.",
     problem:
-      "High-dimensional datasets with correlated variables increase computational cost and can reduce model quality due to redundancy and noise.",
+      "Retail forecasting is affected by seasonality, behavioral variability, and external factors, making robust demand prediction challenging.",
     approach:
-      "Applied PCA with feature-correlation review, explained-variance analysis, and component-space visualization to retain the most informative structure.",
+      "Conducted deep exploratory analysis and tested CatBoost, XGBoost, and LSTM models; tree models were trained globally while LSTM was trained per category.",
     result:
-      "Captured the majority of dataset variance with fewer components, enabling more efficient modeling and clearer feature-space interpretability.",
+      "Delivered practical forecasting baselines and decision-support insights for demand planning, inventory optimization, and promotion strategy.",
     metrics: [
-      "Majority variance preserved with reduced components",
-      "Lower feature-space complexity for downstream models",
-      "Improved interpretability of dominant data structure"
+      "CatBoost baseline performed strongly without heavy tuning",
+      "XGBoost tuning improved quality but remained below CatBoost",
+      "LSTM improved category-level forecasting with careful lag/window tuning"
     ],
-    technologies: ["Python", "NumPy", "Pandas", "Scikit-learn", "Matplotlib"],
-    viewLink: "/projects/pca",
+    technologies: [
+      "Python",
+      "Pandas",
+      "Scikit-learn",
+      "XGBoost",
+      "CatBoost",
+      "TensorFlow/Keras",
+      "Time Series Analysis"
+    ],
+    viewLink: "/sales-forecasting",
     details: {
       objective:
-        "Reduce dimensionality while preserving meaningful variance so the transformed dataset is faster to model and easier to interpret.",
+        "Understand demand behavior, identify patterns, and deliver reliable demand forecasts under real-world sales variability.",
       methodology:
-        "PCA decomposition, component significance analysis, explained-variance tracking, and visualization of component behavior.",
+        "EDA for category behavior and co-purchases, seasonal analysis, and model benchmarking across boosting and recurrent approaches.",
       results:
-        "The transformed space retained the core information content with a smaller set of components suitable for downstream ML tasks.",
+        "Generated useful predictive performance and business-facing insights despite high day-to-day volatility in sales signals.",
       notes:
-        "This project demonstrates a robust preprocessing strategy for high-dimensional machine learning pipelines."
+        "Forecast value came from both model outputs and analytical findings such as seasonality, clusters, and co-purchase behavior."
     }
   },
   {
@@ -55,7 +64,7 @@ const projects = [
       "~37% benign cases misclassified"
     ],
     technologies: ["Python", "TensorFlow", "Keras", "CNN", "Image Preprocessing"],
-    viewLink: "/projects/skin-cancer",
+    viewLink: "/skin-cancer",
     details: {
       objective:
         "Build a reliable binary lesion classifier that prioritizes the detection of malignant cases for safer clinical screening support.",
@@ -87,7 +96,7 @@ const projects = [
       "Scalable classification and extraction workflow"
     ],
     technologies: ["Python", "Transformers", "BERT", "HuggingFace", "NLP Pipelines"],
-    viewLink: "/projects/cx_classifier",
+    viewLink: "/cx_classifier",
     details: {
       objective:
         "Automate conversation understanding and information extraction to reduce manual effort and improve service orchestration.",
@@ -100,43 +109,34 @@ const projects = [
     }
   },
   {
-    id: "sales-forecasting-system",
-    title: "Sales Forecasting with Machine Learning and Deep Learning",
-    primaryCategory: "machine-learning",
-    categoryLabel: "Machine Learning",
-    categories: ["machine-learning", "data-analysis", "deep-learning"],
-    summary:
-      "Retail demand forecasting system using real brewery sales data (Argentina, 2022-2025) with ML and DL model comparisons.",
+    id: "pca-analysis",
+    title: "Principal Component Analysis (PCA) for Dimensionality Reduction",
+    primaryCategory: "dimensionality-reduction",
+    categoryLabel: "Dimensionality Reduction",
+    categories: ["dimensionality-reduction", "machine-learning", "data-analysis"],
+    summary: "Dimensionality-reduction workflow designed to simplify correlated feature spaces before downstream modeling.",
     problem:
-      "Retail forecasting is affected by seasonality, behavioral variability, and external factors, making robust demand prediction challenging.",
+      "High-dimensional datasets with correlated variables increase computational cost and can reduce model quality due to redundancy and noise.",
     approach:
-      "Conducted deep exploratory analysis and tested CatBoost, XGBoost, and LSTM models; tree models were trained globally while LSTM was trained per category.",
+      "Applied PCA with feature-correlation review, explained-variance analysis, and component-space visualization to retain the most informative structure.",
     result:
-      "Delivered practical forecasting baselines and decision-support insights for demand planning, inventory optimization, and promotion strategy.",
+      "Captured the majority of dataset variance with fewer components, enabling more efficient modeling and clearer feature-space interpretability.",
     metrics: [
-      "CatBoost baseline performed strongly without heavy tuning",
-      "XGBoost tuning improved quality but remained below CatBoost",
-      "LSTM improved category-level forecasting with careful lag/window tuning"
+      "Majority variance preserved with reduced components",
+      "Lower feature-space complexity for downstream models",
+      "Improved interpretability of dominant data structure"
     ],
-    technologies: [
-      "Python",
-      "Pandas",
-      "Scikit-learn",
-      "XGBoost",
-      "CatBoost",
-      "TensorFlow/Keras",
-      "Time Series Analysis"
-    ],
-    viewLink: "/projects/sales-forecasting",
+    technologies: ["Python", "NumPy", "Pandas", "Scikit-learn", "Matplotlib"],
+    viewLink: "/pca",
     details: {
       objective:
-        "Understand demand behavior, identify patterns, and deliver reliable demand forecasts under real-world sales variability.",
+        "Reduce dimensionality while preserving meaningful variance so the transformed dataset is faster to model and easier to interpret.",
       methodology:
-        "EDA for category behavior and co-purchases, seasonal analysis, and model benchmarking across boosting and recurrent approaches.",
+        "PCA decomposition, component significance analysis, explained-variance tracking, and visualization of component behavior.",
       results:
-        "Generated useful predictive performance and business-facing insights despite high day-to-day volatility in sales signals.",
+        "The transformed space retained the core information content with a smaller set of components suitable for downstream ML tasks.",
       notes:
-        "Forecast value came from both model outputs and analytical findings such as seasonality, clusters, and co-purchase behavior."
+        "This project demonstrates a robust preprocessing strategy for high-dimensional machine learning pipelines."
     }
   }
 ];
