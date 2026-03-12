@@ -1,0 +1,13 @@
+kagglehub
+keras
+matplotlib
+numpy
+opencv-python
+openpyxl
+pandas
+pillow
+scikit-learn
+seaborn
+tensorflow; python_version < "3.14"
+tf-nightly; python_version >= "3.14"
+tqdm
