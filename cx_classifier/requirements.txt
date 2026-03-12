@@ -1,0 +1,11 @@
+matplotlib
+numpy
+pandas
+scikit-learn
+scipy
+seaborn
+tensorflow; python_version < "3.14"
+tf-nightly; python_version >= "3.14"
+transformers
+keras-hub
+torch

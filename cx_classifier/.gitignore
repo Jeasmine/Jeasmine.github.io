@@ -1,0 +1,25 @@
+# Local dataset snapshots and archives
+claimstruct_multitable_v2/
+claimstruct_multitable_v2_for_training_*/
+*.zip
+
+# Downloaded Hugging Face / Keras presets
+.hf_keras_presets/
+
+# Saved models and generated artifacts
+*.keras
+*.h5
+*.hdf5
+*.weights.h5
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+models/
+checkpoints/
+artifacts/
+outputs/
+runs/
+logs/
+tensorboard/
