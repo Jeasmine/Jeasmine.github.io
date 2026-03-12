@@ -186,6 +186,39 @@ function createElement(tag, className, text) {
 function buildActionLink(label, href, className = "text-link-btn") {
   const link = createElement("a", className, label);
   link.href = href;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  return link;
+}
+
+function buildTwoLineProjectLink(href) {
+  const link = createElement("a", "text-link-btn project-link-two-line");
+  link.href = href;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+  let line1 = "Project Repository";
+  let line2 = href;
+
+  try {
+    const parsed = new URL(href);
+    const treeIndex = parsed.pathname.indexOf("/tree/");
+
+    if (treeIndex > -1) {
+      line1 = `${parsed.host}${parsed.pathname.slice(0, treeIndex)}`;
+      line2 = parsed.pathname.slice(treeIndex);
+    } else {
+      line1 = parsed.host;
+      line2 = parsed.pathname || href;
+    }
+  } catch {
+    line1 = "Project Link";
+    line2 = href;
+  }
+
+  const top = createElement("span", "project-link-line1", line1);
+  const bottom = createElement("span", "project-link-line2", line2);
+  link.append(top, bottom);
   return link;
 }
 
@@ -282,7 +315,7 @@ function openProjectModal(projectId) {
   modalSummary.textContent = project.summary;
   modalObjective.textContent = project.problem;
   modalDataset.textContent = "";
-  modalDataset.appendChild(buildActionLink(project.viewLink, project.viewLink, "text-link-btn"));
+  modalDataset.appendChild(buildTwoLineProjectLink(project.viewLink));
   modalMethodology.textContent = project.approach;
   modalResults.textContent = `${project.result} Key metrics: ${project.metrics.join(" | ")}`;
   modalLessons.textContent = project.details.notes;

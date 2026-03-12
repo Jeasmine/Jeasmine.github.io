@@ -698,6 +698,26 @@ section {
   border-color: var(--accent);
 }
 
+.project-link-two-line {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  line-height: 1.2;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.project-link-line1 {
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.project-link-line2 {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
 @keyframes card-enter {
   from {
     opacity: 0;
