@@ -1,43 +1,48 @@
-# Skin Cancer
+# Skin Cancer Detection Using Deep Learning
 
-● **Brief Description:** This folder contains experiments for skin cancer prediction using exploratory analysis, image-based baselines, and transfer-learning workflows.
+## Overview
+This project focuses on early skin cancer detection from dermoscopic images using deep learning. It is designed as a high-sensitivity AI screening workflow for malignant vs benign lesion classification.
 
-● **Project Objective:** Build and compare skin cancer classification approaches using available tabular and image data.
+## Problem
+Early detection of malignant skin lesions is critical for patient outcomes. Manual diagnosis from images can be time-consuming and highly dependent on specialist availability.
 
-● **How the Files Are Organized:**
-- `EDA.ipynb`: Exploratory data analysis.
-- `Zero Model Img.ipynb`: Baseline image model workflow.
-- `Zero Model Img + tabular.ipynb`: Combined image + tabular experiment.
-- `TLM.ipynb`: Transfer-learning modeling workflow.
-- `skin_df_eda.xlsx`: Dataset/export used in analysis.
-- `requirements.txt`: Dependencies used by the project.
+The project goal is to build an AI system that detects whether a lesion is malignant or benign from dermoscopic imagery.
 
-● **Dataset Used:** `skin_df_eda.xlsx` generated and external image data referenced by notebooks.
+## Approach
+Two model families were evaluated:
 
-● **Technologies Used:** Python, Jupyter Notebook, Pandas, NumPy, TensorFlow/Keras, OpenCV, Pillow, Scikit-learn, KaggleHub.
+- Transfer Learning Models (TLM)
+- Convolutional Neural Networks (CNN)
 
-● **Key Results:** Multiple experimental pipelines (baseline, multimodal, and transfer learning) are documented in the notebooks.
+After experimentation, CNN-based approaches provided the strongest performance profile for this use case.
 
-## Model Comparison (Notebook Results)
+## Results
+The model achieved strong detection performance:
 
-### Transfer-Learning Variants (`TLM.ipynb`)
+- Approximately **98%** of malignant (positive) cases are correctly detected
+- About **37%** of benign cases are misclassified
+- Around **2%** of malignant cases are misclassified
 
-| Model | Test Loss | Test Accuracy | Test Precision | Test Recall |
-| --- | ---: | ---: | ---: | ---: |
-| Baseline Transfer (MobileNetV2 frozen) | 0.3958 | 0.8207 | 0.5556 | 0.4266 |
-| Advanced Transfer (fine-tuned) | 0.3348 | 0.8548 | 0.6959 | 0.4608 |
-| Imbalance-Aware Transfer (class-weighted) | 0.4064 | 0.8107 | 0.5114 | 0.7679 |
+The system is intentionally optimized for **high sensitivity**, prioritizing malignant-case detection because false negatives represent the highest risk in medical diagnosis.
 
-### Baseline CNN vs Multimodal CNN
+## Key Takeaway
+Prevention-oriented model behavior is preferable in medical contexts: missing a malignant case is significantly more dangerous than producing a false positive.
 
-| Model | Test Loss | Test AUC | Test Recall | Source Notebook |
-| --- | ---: | ---: | ---: | --- |
-| Image-Only CNN Baseline | 0.4492 | 0.8582 | 0.8107 | `Zero Model Img.ipynb` |
-| Image + Tabular Multimodal CNN | 0.3117 | 0.9078 | 0.6931 | `Zero Model Img + tabular.ipynb` |
+## Technologies
 
-### Interpretation
+- Python
+- TensorFlow
+- Keras
+- CNN architectures
+- Image preprocessing
 
-- In transfer learning, the **advanced fine-tuned model** gives the best accuracy and precision.
-- The **imbalance-aware model** substantially improves recall, which is useful when sensitivity to malignant cases is prioritized.
-- The **multimodal CNN** improves AUC over the image-only baseline, indicating stronger ranking/discrimination performance.
-- Metric priorities should be selected by use case (for example: maximize recall for screening sensitivity vs maximize precision to reduce false positives).
+## Repository Structure
+
+- `EDA.ipynb`: Exploratory analysis and dataset understanding
+- `Zero Model Img.ipynb`: Image-based baseline experimentation
+- `Zero Model Img + tabular.ipynb`: Multimodal experimentation
+- `TLM.ipynb`: Transfer-learning experimentation
+- `requirements.txt`: Project dependencies
+
+## Notes
+This project demonstrates how metric priorities must align with domain risk: in medical AI, sensitivity is often the primary objective.

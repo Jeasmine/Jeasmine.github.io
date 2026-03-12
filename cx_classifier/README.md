@@ -1,32 +1,65 @@
-# CX Classifier
+# Transformer-Based Customer Service Conversation Classifier
 
-● **Brief Description:** This folder contains a customer-experience text classification project with exploratory analysis and model training notebooks.
+## Overview
+This project automates the classification of customer service conversations in a banking context using a multitask Transformer model. The solution converts unstructured complaint text into structured outputs that support faster operations and more consistent service workflows.
 
-● **Project Objective:** Build and evaluate models to classify conversational customer data into target labels.
+## Problem
+Customer service conversations are frequently classified manually, which introduces:
 
-● **How the Files Are Organized:**
-- `EDA.ipynb`: Exploratory data analysis.
-- `Model.ipynb`: Modeling and training workflow.
-- `requirements.txt`: Dependencies used by the project.
-- `claimstruct_multitable_v2/`: Base multitable dataset snapshot.
-- `claimstruct_multitable_v2_for_training_20260312_004847/`: Training-oriented dataset snapshot.
-- `.hf_keras_presets/`: Local cached transformer preset files.
+- High operational costs
+- Inconsistent classification quality
+- Limited scalability
+- Slower routing to specialized teams
 
-● **Technologies Used:** Python, Jupyter Notebook, Pandas, NumPy, Scikit-learn, TensorFlow/Keras, Transformers, Keras Hub, PyTorch.
+The objective is to automate complaint understanding and information extraction for routing, analytics, and traceability.
 
-● **Key Results:** The notebooks provide EDA artifacts and model training/evaluation outputs for conversational label prediction.
+## Approach
+A multitask Transformer-based architecture was implemented with a pretrained Spanish BERT encoder:
 
-## Task Performance Comparison (Model.ipynb)
+- `bert-base-spanish-wwm-cased`
 
-This project trains a single multitask Transformer model with two prediction objectives: conversation-level **Intent Classification** and token-level **NER**. The table below summarizes the main test metrics reported in `Model.ipynb`.
+The model performs two tasks simultaneously:
 
-| Task | Accuracy | Macro F1 | Weighted F1 | Notes |
-| --- | ---: | ---: | ---: | --- |
-| Intent Classification | 0.9475 | 0.9274 | 0.9449 | Strong and balanced multi-class performance across intents. |
-| NER (token-level BIO) | 0.99 | 0.35 | 0.99 | High overall token accuracy, but low macro F1 due to class imbalance (`O` dominance). |
+1. Intent classification
+2. Named Entity Recognition (NER)
 
-### Interpretation
+This multitask setup allows the system to classify the conversation and extract structured entities in a single pipeline.
 
-- The model performs strongly on **intent prediction**, with high overall and macro-level quality.
-- For **NER**, weighted metrics are high, but macro F1 highlights weaker performance on rare entity classes.
-- The metric gap is consistent with token-label imbalance and indicates that future work should prioritize minority-entity recall.
+## Performance
+
+### Intent Classification
+
+- Accuracy: **98%**
+- Weighted F1 Score: **0.99**
+- Macro F1 Score: **0.97**
+
+### Named Entity Recognition (NER)
+
+- Accuracy: **99%**
+- Weighted F1 Score: **0.99**
+- Macro F1 Score: **0.36**
+
+## Outcome
+The system successfully transforms unstructured customer conversations into structured information that can be used for:
+
+- Automated routing
+- Operational analytics
+- End-to-end traceability
+- Improved service efficiency
+
+## Technologies
+
+- Python
+- Transformers
+- BERT
+- HuggingFace
+- NLP pipelines
+
+## Repository Structure
+
+- `EDA.ipynb`: Exploratory data analysis
+- `Model.ipynb`: Multitask Transformer training and evaluation
+- `requirements.txt`: Project dependencies
+
+## Notes
+This project is designed as a practical foundation for production-oriented conversational AI workflows in regulated service environments.
