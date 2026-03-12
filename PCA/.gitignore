@@ -1,0 +1,15 @@
+# Data sources
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+
+# Generated training artifacts
+models/
+artifacts/
+checkpoints/
+*.keras
+*.h5
+*.joblib
+*.pkl
